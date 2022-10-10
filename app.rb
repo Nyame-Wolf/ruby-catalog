@@ -7,32 +7,32 @@ class App
     case @user_options
 
     when 1
-      '1 -> List all books'
+      puts '1 -> List all books'
     when 2
-      '2 -> List all music albums'
+     puts '2 -> List all music albums'
     when 3
-      '3 -> List all labels'
+     puts '3 -> List all labels'
     when 4
-      '4 -> List all music albums'
+      puts '4 -> List all music albums'
     when 5
-      '5 -> List all genres'
+     puts '5 -> List all genres'
     when 6
-      '6 -> List all games'
+     puts '6 -> List all games'
     end
   end
 
   def add_options
     case @user_options
     when 7
-      '7 -> List all authors'
+     puts '7 -> List all authors'
     when 8
-      '8 -> Add book'
+     puts '8 -> Add book'
     when 9
-      '9 -> Add music album'
+     puts '9 -> Add music album'
     when 10
-      '10 -> Add a game'
+     puts '10 -> Add a game'
     when 11
-      '11 -> Exit App'
+      exit_app
     else
       puts 'Enter a valid option (1 - 11)'
     end
@@ -43,11 +43,17 @@ class App
     @user_options = gets.chomp.to_i
     list_options
     add_options
-
+    dashboard
   end
 
   def run
     dashboard
+  end
+
+    def exit_app
+    puts 'Thank you for using this app'
+    # add save json files
+    exit
   end
 end
 
