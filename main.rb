@@ -3,7 +3,7 @@ require './app'
 
 def main
   app = App.new
-  puts 'Welcome to Nyame School Library App!'
+  puts 'Welcome to Catalog of things!'
   app.run
 end
 
