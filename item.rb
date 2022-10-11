@@ -1,13 +1,28 @@
 require 'date'
+require 'securerandom'
+attr_accessor :publish_date, :archived, :id
+attr_reader :author, :label, :genre
 
 class Item
-  def initialize(genre, publish_date, archived: false)
-    @id = 324
-    @genre = genre
-    @author = 'author'
-    @label = 'label'
+  def initialize(publish_date, archived: false, id: nil)
+    @id = id || SecureRandom.random_number(1000)
     @publish_date = publish_date
     @archived = archived
+  end
+
+  def author=(author)
+    @author = author
+    author.items.push(self) unless author.items.include?(self)
+  end
+
+  def label=(label)
+    @label = label
+    label.items.push(self) unless label.items.include?(self)
+  end
+
+  def genre=(genre)
+    @genre = genre
+    genre.items.push(self) unless genre.items.include?(self)
   end
 
   def moved_to_archive
