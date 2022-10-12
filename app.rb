@@ -1,8 +1,21 @@
+require_relative './classes/game'
 class App
+  attr_accessor games:
   def initialize
     @user_options = 0
+    @games = []
   end
 
+  def create_game(multiplayer, last_played_at)
+    game = Game.new(multiplayer, last_played_at)
+    @games.push(game)
+  end
+
+  def list_games
+    @games.each_with_index do |game, index|
+      puts "(#{index})-> Mutiplayer: \"#{game.multiplayer} \"Last Played At: #{game.last_played_at}"
+    end
+  end
   def list_options
     case @user_options
 
