@@ -1,13 +1,15 @@
 require 'date'
 require 'securerandom'
-attr_accessor :publish_date, :archived, :id
-attr_reader :author, :label, :genre
 
 class Item
-  def initialize(publish_date, archived: false, id: nil)
+  attr_accessor :publish_date, :archived, :id
+  attr_reader :author, :label, :genre
+
+  def initialize(id, publish_date)
     @id = id || SecureRandom.random_number(1000)
-    @publish_date = publish_date
-    @archived = archived
+    @publish_date = publish_date || DateTime.now.strftime('%m/%d/%Y')
+    @archived = moved_to_archive
+    @author.items.push(self)
   end
 
   def author=(author)
@@ -37,6 +39,3 @@ class Item
     date - publish_year > 10
   end
 end
-
-item = Item.new('Rock', '10/10/2010')
-item.moved_to_archive
