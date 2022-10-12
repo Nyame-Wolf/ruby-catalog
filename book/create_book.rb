@@ -32,6 +32,7 @@ class CreateBook
         puts "#{index + 1}) Publisher: #{book.publisher.capitalize}, "
         puts "Publish Date: #{book.publish_date}, CoverState: #{book.cover_state.capitalize}"
         puts "Archived: #{book.archived}\n"
+        puts "Label: #{book.label.title}\n"
       end
     end
   end

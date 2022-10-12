@@ -19,7 +19,8 @@ class Label
       JSON.create_id => self.class.name,
       'id' => @id,
       'title' => @title,
-      'color' => @color
+      'color' => @color,
+      'items' => @items
     }.to_json(*args)
   end
 end

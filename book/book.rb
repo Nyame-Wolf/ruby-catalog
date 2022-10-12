@@ -16,13 +16,15 @@ class Book < Item
       'publish_date' => @publish_date,
       'publisher' => @publisher,
       'cover_state' => @cover_state,
-      'label' => @label
+      'label_id' => @label.id,
+      'label_title' => @label.title,
+      'label_color' => @label.color
     }.to_json(*args)
   end
 
   private
 
   def can_be_archived?
-    (@cover_state == 'bad' || super)
+    @cover_state == 'bad' || super
   end
 end
