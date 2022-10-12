@@ -4,6 +4,9 @@
 # Ruby Catalog of things
 A tool that keeps track of a users  books, music albums and games
 
+# Class diagram for the "Catalog"
+![](catalog_of_my_things.png)
+
 ## Getting Started
 - Check the Ruby version or if you have at all by running `ruby -v` if you get something like this `ruby 2.6.8p205 (2021-07-07 revision 67951)` you have Ruby installed.
 - Clone the repository by runiing `git clone https://github.com/raminka13/oop-school-library.git` in your CLI.
