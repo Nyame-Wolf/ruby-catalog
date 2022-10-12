@@ -1,4 +1,5 @@
-require_relative './classes/game'
+require_relative './game/create_game'
+require_relative './game/data'
 class App
   attr_accessor :games, :authors
 
@@ -6,23 +7,9 @@ class App
     @user_options = 0
     @games = []
     @authors = []
-  end
-
-  def create_game(multiplayer, last_played_at)
-    game = Game.new(multiplayer, last_played_at)
-    @games.push(game)
-  end
-
-  def list_games
-    @games.each_with_index do |game, index|
-      puts "(#{index})-> Multiplayer: \"#{game.multiplayer} \"Last Played At: #{game.last_played_at}"
-    end
-  end
-
-  def list_authors
-    @authors.each_with_index do |author, index|
-      puts "(#{index})-> Name: #{author.first_name} #{author.last_name} "
-    end
+    @game = CreateGame.new
+    @author = CreateAuthor.new
+    @data = Data.new
   end
 
   def list_options
@@ -40,6 +27,7 @@ class App
       puts '5 -> List all genres'
     when 6
       puts '6 -> List all games'
+      @game.list_games
     end
   end
 
@@ -47,12 +35,14 @@ class App
     case @user_options
     when 7
       puts '7 -> List all authors'
+      @author.list_authors
     when 8
       puts '8 -> Add book'
     when 9
       puts '9 -> Add music album'
     when 10
       puts '10 -> Add a game'
+      @game.add_game
     when 11
       exit_app
     else
@@ -69,10 +59,13 @@ class App
   end
 
   def run
+    @data.load_authors
+    @data.load_games
     dashboard
   end
 
   def exit_app
+    @data.save_files
     puts 'Thank you for using this app'
     # add save json files
     exit
