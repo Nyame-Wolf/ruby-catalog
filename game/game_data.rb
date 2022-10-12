@@ -1,7 +1,7 @@
 require_relative '../data_values'
 require 'json'
 
-class Data
+class GameData
   def initialize
     @games_list = DataValues.games
     @authors_list = DataValues.authors

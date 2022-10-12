@@ -1,4 +1,5 @@
-require_relative '../genre'
+require_relative '../music-album/genre'
+
 describe Genre do
   context 'Testing Genre' do
     it 'it creates a genre instance' do

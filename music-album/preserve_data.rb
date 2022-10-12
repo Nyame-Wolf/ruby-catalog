@@ -6,7 +6,7 @@ class PreserveData
     data = []
     file = './albums.json'
     albums.each do |album|
-      data << { publish_date: album.publish_date, archived: album.archived, id: album.id, on_spotify: album.on_spotify,
+      data << { publish_date: album.publish_date, id: album.id, on_spotify: album.on_spotify,
                 genre: album.genre.id }
     end
     File.write(file, JSON.pretty_generate(data))
@@ -17,7 +17,7 @@ class PreserveData
     file = './albums.json'
     if File.exist?(file)
       JSON.parse(File.read(file)).each do |album|
-        new_album = MusicAlbum.new(album['publish_date'], album['archived'], album['on_spotify'])
+        new_album = MusicAlbum.new(album['on_spotify'])
         new_album.id = album['id']
         genre = genres.find do |g|
           g.id == album['genre']

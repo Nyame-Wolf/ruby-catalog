@@ -7,25 +7,24 @@ require_relative './music-album/genre'
 require_relative './item'
 
 require_relative './game/create_game'
-require_relative './game/data'
+require_relative './game/game_data'
 require_relative './book/create_book'
 require_relative './book/create_label'
-require_relative './book/data'
+require_relative './book/book_data'
 
 class App
   attr_accessor :music_albums, :genres, :games, :authors
 
   def initialize
     @user_options = 0
-    @games = []
-    @authors = []
     @genres = PreserveData.load_genres
     @music_albums = PreserveData.load_albums(@genres)
     @game = CreateGame.new
     @author = CreateAuthor.new
     @book = CreateBook.new
     @label = CreateLabel.new
-    @data = Data.new
+    @book_data = BookData.new
+    @game_data = GameData.new
   end
 
   def list_options
@@ -42,7 +41,6 @@ class App
     when 4
       puts '4 -> List all genres'
       List.list_all_genres(@genres)
-
     when 5
       puts '5 -> List all games'
       @game.list_games
@@ -79,19 +77,18 @@ class App
   end
 
   def run
-    @data.load_authors
-    @data.load_games
     system('clear')
-    @data.load_books
-    @data.load_labels
+    @game_data.load_authors
+    @game_data.load_games
+    @book_data.load_books
+    @book_data.load_labels
     dashboard
   end
 
   def exit_app
-    @data.save_files
+    @book_data.save_files
     puts 'Thank you for using this app'
-    @data.save_files
-    # add save json files
+    @game_data.save_files
     PreserveData.store_albums(@music_albums)
     PreserveData.store_genres(@genres)
     exit
