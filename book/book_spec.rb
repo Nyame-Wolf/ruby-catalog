@@ -45,10 +45,6 @@ describe Book do
       expect(bad_book.move_to_archive).to be true
     end
 
-    # it "should return true if the parent's method returns true" do
-    #   expect(@book.move_to_archive).to be true
-    # end
-
     it 'should return false otherwise' do
       good_book = Book.new('publisher', 'good')
       expect(good_book.move_to_archive).to be false
