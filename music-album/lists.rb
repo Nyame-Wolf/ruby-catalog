@@ -19,7 +19,6 @@ class List
     else
       array.each do |genre|
         puts "Available Genres: #{genre.name}"
-        p genre.items
       end
     end
   end

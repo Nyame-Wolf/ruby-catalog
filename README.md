@@ -9,8 +9,8 @@ A tool that keeps track of a users  books, music albums and games
 
 ## Getting Started
 - Check the Ruby version or if you have at all by running `ruby -v` if you get something like this `ruby 2.6.8p205 (2021-07-07 revision 67951)` you have Ruby installed.
-- Clone the repository by runiing `git clone https://github.com/raminka13/oop-school-library.git` in your CLI.
-- `cd oop-school-library`
+- Clone the repository by runiing `git clone https://github.com/Nyame-Wolf/ruby-catalog` in your CLI.
+- `cd ruby-catalog`
 - Run `ruby main.rb`
 - Follow the instructions.
 - In options type 99 for a treat.
@@ -36,7 +36,7 @@ A tool that keeps track of a users  books, music albums and games
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/raminka13/oop-school-library/issues).
+Feel free to check the [issues page](https://github.com/Nyame-Wolf/ruby-catalog/issues).
 
 ## Show your support
 
