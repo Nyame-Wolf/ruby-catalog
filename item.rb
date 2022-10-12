@@ -1,11 +1,12 @@
 require 'date'
 require 'securerandom'
-attr_accessor :publish_date, :archived, :id
-attr_reader :author, :label, :genre
 
 class Item
-  def initialize(publish_date, archived: false, id: nil)
-    @id = id || SecureRandom.random_number(1000)
+  attr_accessor :publish_date, :archived, :id
+  attr_reader :author, :label, :genre
+
+  def initialize(publish_date, archived)
+    @id = nil || SecureRandom.random_number(1000)
     @publish_date = publish_date
     @archived = archived
   end
