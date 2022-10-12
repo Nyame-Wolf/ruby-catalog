@@ -4,7 +4,6 @@ require_relative './book/create_book'
 require_relative './book/create_label'
 require_relative './book/data'
 
-
 class App
   attr_accessor :games, :authors
 

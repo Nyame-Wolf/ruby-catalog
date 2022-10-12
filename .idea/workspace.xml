@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a137c63f-af68-4c90-acc1-ccb7f24c0244" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/game/data.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/author.rb" beforeDir="false" afterPath="$PROJECT_DIR$/game/author.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/game.rb" beforeDir="false" afterPath="$PROJECT_DIR$/game/game.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/item.rb" beforeDir="false" afterPath="$PROJECT_DIR$/item.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
