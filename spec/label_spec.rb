@@ -1,4 +1,4 @@
-require_relative 'label'
+require_relative '../book/label'
 
 describe Label do
   before(:each) do
