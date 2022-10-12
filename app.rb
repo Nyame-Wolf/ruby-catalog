@@ -15,12 +15,6 @@ require_relative './book/data'
 class App
   attr_accessor :music_albums, :genres, :games, :authors
 
-  
-    
-
-
-
-
   def initialize
     @user_options = 0
     @games = []
@@ -32,7 +26,6 @@ class App
     @book = CreateBook.new
     @label = CreateLabel.new
     @data = Data.new
-
   end
 
   def list_options
@@ -49,7 +42,6 @@ class App
     when 4
       puts '4 -> List all genres'
       List.list_all_genres(@genres)
-    when 5
 
     when 5
       puts '5 -> List all games'

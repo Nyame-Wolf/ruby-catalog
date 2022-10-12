@@ -9,7 +9,6 @@ class Item
     @id = id || SecureRandom.random_number(1000)
     @publish_date = publish_date || DateTime.now.strftime('%m/%d/%Y')
     @archived = move_to_archive
-
   end
 
   def author=(author)
