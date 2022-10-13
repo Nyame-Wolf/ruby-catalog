@@ -4,5 +4,11 @@
     "id": 972,
     "first_name": "Reama",
     "last_name": "Rima"
+  },
+  {
+    "json_class": "Author",
+    "id": 371,
+    "first_name": "flei",
+    "last_name": "eli"
   }
 ]
