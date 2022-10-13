@@ -41,7 +41,6 @@ class CreateLabel
     else
       @label_list.each_with_index do |label, index|
         puts "#{index}) Title: #{label.title},  Color: #{label.color}"
-        p label.items
       end
     end
   end
