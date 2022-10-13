@@ -1,7 +1,7 @@
 require_relative '../item'
 
 class Game < Item
-  attr_accessor :date, :multiplayer, :last_played_at
+  attr_reader :date, :multiplayer, :last_played_at
 
   def initialize(multiplayer, last_played_at, publish_date: nil)
     super(id, publish_date)

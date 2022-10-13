@@ -1,0 +1,4 @@
+Game#new is a child of Item
+Game#multiplayer can not be written
+Game#last_played_at can not be written
+Game#can_be_achived should return true if cover_state equals 'bad', even if parent's method returns false
