@@ -38,7 +38,6 @@ class CreateLabel
   def list_labels
     if @label_list.empty?
       puts 'Please ADD some Labels...'
-      choose_label
     else
       @label_list.each_with_index do |label, index|
         puts "#{index}) Title: #{label.title},  Color: #{label.color}"
