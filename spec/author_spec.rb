@@ -3,7 +3,6 @@ require_relative '../game/author'
 describe Author do
   before(:each) do
     @author = Author.new('Raul', 'Raminka')
-
   end
 
   context '#new' do
@@ -35,7 +34,6 @@ describe Author do
       expect { @author.last_name = 'Elias' }.to raise_error(NoMethodError)
     end
   end
-
 
   context '#add_item' do
     it 'takes item object as parameter and sets the label of the item' do
