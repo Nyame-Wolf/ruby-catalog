@@ -30,19 +30,14 @@ class App
   def list_options
     case @user_options
     when 1
-      puts '1 -> List all books'
       @book.list_books
     when 2
-      puts '2 -> List all music albums'
       List.list_all_music_albums(@music_albums)
     when 3
-      puts '3 -> List all labels'
       @label.list_labels
     when 4
-      puts '4 -> List all genres'
       List.list_all_genres(@genres)
     when 5
-      puts '5 -> List all games'
       @game.list_games
     end
   end
@@ -50,26 +45,35 @@ class App
   def add_options
     case @user_options
     when 6
-      puts '6 -> List all authors'
       @author.list_authors
     when 7
-      puts '7 -> Add book'
       @book.add_book
     when 8
-      puts '8 -> Add music album'
       AlbumCreator.create_album(@music_albums, @genres)
     when 9
-      puts '9 -> Add a game'
       @game.add_game
     when 10
       exit_app
     else
-      puts 'Enter a valid option (1 - 11)'
+      puts 'Enter a valid option (1 - 10)'
     end
   end
 
   def dashboard
-    puts "Please choose an option by entering a number from below\n"
+    puts "
+        Please choose an option by entering a number from below:\n
+        [1] - List All Books
+        [2] - List All Music Albums
+        [3] - List All Labels
+        [4] - List All Genres
+        [5] - List All Games
+        [6] - List All Authors
+        [7] - Add a Book
+        [8] - Add a Music Album
+        [9] - Add a Game
+        [10] - Exit
+
+        Type your option"
     @user_options = gets.chomp.to_i
     list_options
     add_options
@@ -86,8 +90,8 @@ class App
   end
 
   def exit_app
-    @book_data.save_files
     puts 'Thank you for using this app'
+    @book_data.save_files
     @game_data.save_files
     PreserveData.store_albums(@music_albums)
     PreserveData.store_genres(@genres)

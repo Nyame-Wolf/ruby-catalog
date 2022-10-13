@@ -1,4 +1,5 @@
 require_relative '../data_values'
+require_relative './label'
 require 'json'
 
 class BookData
@@ -24,8 +25,7 @@ class BookData
       books_data = JSON.parse(File.read('./books.json'), create_additions: true)
       books_data.each do |bk|
         book = Book.new(bk['publisher'], bk['cover_state'], id: bk['id'], publish_date: bk['publish_date'])
-        label = Label.new(bk['label_title'], bk['label_color'], id: bk['label_id'])
-        book.label = label
+        book.label = Label.new(bk['label_title'], bk['label_color'], id: bk['label_id'])
         @book_list << book
       end
     else
