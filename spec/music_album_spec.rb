@@ -6,6 +6,12 @@ describe MusicAlbum do
     music_album2 = MusicAlbum.new(true)
     music_album3 = MusicAlbum.new(false)
 
+    it 'is an instance of MusicAlbum and takes 3 parameter' do
+      expect(music_album).to be_instance_of(MusicAlbum)
+    end
+    it 'is a child of Item' do
+      expect(music_album).to be_kind_of(Item)
+    end
     it 'creates a new music album insance' do
       expect(music_album.on_spotify).to eq(true)
     end
